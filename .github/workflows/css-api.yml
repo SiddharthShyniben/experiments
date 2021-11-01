@@ -20,6 +20,6 @@ jobs:
       - name: Update files
         uses: test-room-7/action-update-file@v1
         with:
-            file-path: '../'
+            file-path: gen.css
             commit-msg: Update generated css
             github-token: ${{ secrets.GITHUB_TOKEN }}
