@@ -1,4 +1,4 @@
-const contents = Deno.readTextFileSync('./template.css');
+const contents = Deno.readTextFileSync('css-api/template.css');
 
 const date = new Date();
 const year = date.getFullYear();
@@ -13,4 +13,4 @@ const out = contents.replace('%{year}', year.toString())
 	.replace('%{day-count}', dayCount)
 	.replace('%{leap}', leap);
 
-Deno.writeTextFileSync('gen.css', out);
+Deno.writeTextFileSync('css-api/gen.css', out);
