@@ -17,3 +17,9 @@ jobs:
           deno-version: v1.x
       - name: Build the generated css file
         run: cd css-api; deno run -A build.ts
+      - name: Update files
+        uses: test-room-7/action-update-file@v1
+        with:
+            file-path: '../'
+            commit-msg: Update generated css
+            github-token: ${{ secrets.GITHUB_TOKEN }}
