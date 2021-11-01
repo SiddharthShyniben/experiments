@@ -1,7 +1,7 @@
 :root {
-	--year: %{year};
+	--year: '%{year}';
 	--%{month}: ;
-	--${day}: ;
-	--day-%{day}: ;
+	--%{day}: ;
+	--day-%{day-count}: ;
 	%{leap}
 }
