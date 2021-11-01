@@ -17,8 +17,6 @@ jobs:
           deno-version: v1.x
       - name: Build the generated css file
         run: cd css-api; deno run -A build.ts
-      - name: switching from HTTPS to SSH
-        run: git remote set-url origin ${{ secrets.ssh }}
       - name: check for changes
         run: git status
       - name: stage changed files
