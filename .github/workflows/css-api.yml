@@ -15,5 +15,5 @@ jobs:
         with:
           deno-version: v1.x
       - name: Build the generated css file
-        run: cd css-api; deno run -A build.ts; cd ../
+        run: deno run -A css-api/build.ts
       - uses: stefanzweifel/git-auto-commit-action@v4
