@@ -16,14 +16,4 @@ jobs:
           deno-version: v1.x
       - name: Build the generated css file
         run: cd css-api; deno run -A build.ts; cd ../
-      - name: Commit files
-        run: |
-          git config --local user.email "siddharth.muscat@gmail.com"
-          git config --local user.name "Siddharth Shyniben"
-          git add .
-          git diff --quiet && git diff --staged --quiet || git commit -am "Update CSS API - $(date -d '+5 hours +30 minutes' +'%d %b %Y | %I:%M %p')"
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-            github_token: ${{ secrets.GITHUB_TOKEN }}
-            branch: main
+      - uses: stefanzweifel/git-auto-commit-action@v4
