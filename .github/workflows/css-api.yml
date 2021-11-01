@@ -17,9 +17,15 @@ jobs:
           deno-version: v1.x
       - name: Build the generated css file
         run: cd css-api; deno run -A build.ts
-      - name: Update files
-        uses: test-room-7/action-update-file@v1
-        with:
-            file-path: gen.css
-            commit-msg: Update generated css
-            github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: switching from HTTPS to SSH
+        run: git remote set-url origin ${{ secrets.ssh }}
+      - name: check for changes
+        run: git status
+      - name: stage changed files
+        run: git add .
+      - name: commit changed files
+        run: git commit -m "Auto updating gen.css"
+      - name: fetch from master
+        run: git fetch origin master
+      - name: push code to master
+        run: git push origin HEAD:master
