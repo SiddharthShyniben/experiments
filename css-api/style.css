@@ -201,10 +201,10 @@ body {
 }
 
 
-.wednseday {
-	--bg: var(--wednseday) #1abc9c;
-	--fg: var(--wednseday) white;
-	--space: var(--wednseday) 5px;
+.wednesday {
+	--bg: var(--wednesday) #1abc9c;
+	--fg: var(--wednesday) white;
+	--space: var(--wednesday) 5px;
 
 	background: var(--bg, initial);
 	border-radius: var(--space, initial);
